@@ -1,0 +1,33 @@
+---
+layout: default.njk
+---
+
+
+
+<p>
+    <b>Category</b> {{category}}
+</p>
+
+<ul class="rest-links">
+
+    {% if site %}
+        <li><a href="{{site}}">{{site}}</a></li>
+    {% endif %}
+
+    {% if facebook %}
+        <li><a href="{{facebook}}">{{facebook}}</a></li>
+    {% endif %}
+
+    {% if twitter %}
+        <li><a href="{{twitter}}">{{twitter}}</a></li>
+    {% endif %}
+
+    {% if instagram %}
+        <li><a href="{{instagram}}">{{instagram}}</a></li>
+    {% endif %}
+
+</ul>
+
+
+{# All Content Injected Here #}
+{{ content | safe }}

@@ -19,3 +19,7 @@ data.filter(rest => {
            rest.summary.toLowerCase().includes(term.toLowerCase())
 })
 ```
+
+## Nunjucks If statement
+
+[Nunjucks Docs - If](https://mozilla.github.io/nunjucks/templating.html#if)

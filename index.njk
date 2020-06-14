@@ -9,7 +9,13 @@ layout: default.njk
     {%- for rest in collections.restaurants -%}
 
 
-        <li><a href="{{rest.url}}">{{rest.data.name}}</a></li>
+        <li>
+            <a href="{{rest.url}}">
+                {{rest.data.name}}
+            </a>
+            - 
+            {{rest.data.summary}}
+        </li>
 
         
     {%- endfor -%}

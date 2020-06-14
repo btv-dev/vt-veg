@@ -1,13 +1,16 @@
 ---
 name: Revolution Kitchen
 category: fine dining
+
 breakfast: false
 lunch: true
 dinner: true
+
 site: https://revolutionkitchen.com/
 facebook: https://www.facebook.com/RevKitchVT
 twitter: https://twitter.com/revkitchvt
 instagram: https://www.instagram.com/revkitchvt/
+
 summary: Burlington’s first restaurant featuring an all-vegetarian menu
 ---
 
