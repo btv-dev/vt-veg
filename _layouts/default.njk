@@ -17,7 +17,7 @@
     </style>
 
 </head>
-<body>
+<body class="no-js" >
     <div class="content">
         
         <header class="header">
@@ -46,5 +46,14 @@
     
     </div>
     
+
+    <!-- capture the JS content as a Nunjucks variable -->
+    {% set js %}
+        {% include "scripts/site.js" %}
+    {% endset %}
+    <!-- feed it through our jsmin filter to minify -->
+    <script>
+        {{ js | jsmin | safe }}
+    </script>
 </body>
 </html>
