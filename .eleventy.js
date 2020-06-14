@@ -34,11 +34,17 @@ module.exports = function(eleventyConfig) {
     // add fitlers
     const CleanCSS = require("clean-css");
     eleventyConfig.addFilter("cssmin", function(code) {
+        // return original text if run in dev
+        if (process.env.ELEVENTY_ENV.toLowerCase() == "dev") return code
+
         return new CleanCSS({}).minify(code).styles;
     });
 
     const Terser = require("terser");
     eleventyConfig.addFilter("jsmin", function(code) {
+        // return original text if run in dev
+        if (process.env.ELEVENTY_ENV.toLowerCase() == "dev") return code
+
         let minified = Terser.minify(code);
         if (minified.error) {
             console.log("Terser error: ", minified.error);

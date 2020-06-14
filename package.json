@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "npx eleventy",
-        "serve": "npx eleventy --serve"
+        "build": "npx cross-env ELEVENTY_ENV=prod npx eleventy",
+        "serve": "npx cross-env ELEVENTY_ENV=dev  npx eleventy --serve"
     },
     "repository": {
         "type": "git",

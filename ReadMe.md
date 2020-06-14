@@ -21,9 +21,9 @@ npm i @11ty/eleventy
 
 ## Todo//
 
-* Category Pages
-* Search
-* Netlify CMS
-* Self Host Google Fonts
+* Dev vs. Prod - Minify vs Not
+* Combine Search
 * create category pages
   * /categories/fine-dining/
+* Netlify CMS
+* Self Host Google Fonts
