@@ -21,8 +21,9 @@ npm i @11ty/eleventy
 
 ## Todo//
 
-* Combine Search
 * create category pages
   * /categories/fine-dining/
 * Netlify CMS
 * Self Host Google Fonts
+* push query param while typing and load on document load
+  * `?search=pebble`

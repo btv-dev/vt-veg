@@ -22,11 +22,20 @@
     <div class="content">
         
         <header class="header">
-            <nav>
-                <ul class="unstyled">
-                    <li><a href="/">Home</a></li>
-                </ul>
-            </nav>
+           <a href="/" class="page-title"class="page-title">
+                {# Site Title / Brand Logo #}
+                <h1 class="d-flex-inline-center">
+                    <span class="state d-flex-inline-center">
+                        {% include "_includes/icons/vt.svg" %}
+                        <span class="state-text">VT</span> 
+                    </span>
+                    <span class="veg d-flex-inline-center">
+                        {% include "_includes/icons/leaf.svg" %}
+                        <span class="veg-text">Vegetarian</span>
+                    </span>
+                </h1>
+
+            </a>
         </header>
 
         <main class="main">
@@ -38,7 +47,7 @@
         </main>
 
         <footer class="footer" >
-            Built with ❤ in VT
+            Built with  {% include "_includes/icons/heart.svg" %} in VT
         </footer>
         
     
