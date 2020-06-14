@@ -1,0 +1,24 @@
+{
+    "name": "@ads-vdh/vt-veg",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "npx eleventy",
+        "serve": "npx eleventy --serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KyleMit/vt-veg.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/KyleMit/vt-veg/issues"
+    },
+    "homepage": "https://github.com/KyleMit/vt-veg#readme",
+    "dependencies": {
+        "@11ty/eleventy": "^0.11.0"
+    }
+}
