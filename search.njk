@@ -1,0 +1,73 @@
+---
+name: Search Restaunts
+layout: default.njk
+---
+
+<form class="form-search" action="">
+    <input type="text" id="text-search">
+    {% include "_includes/icons/search.svg" %}
+</form>
+
+<ul class="restaurants">
+    {%- for rest in collections.restaurants -%}
+
+
+        <li id="{{rest.url}}" class="restaurant">
+
+            <a href="{{rest.url}}">
+                {{rest.data.name}}
+            </a>
+            - 
+            {{rest.data.summary}}
+        </li>
+
+        
+    {%- endfor -%}
+</ul>
+
+
+<style>
+/* default to hidden */
+.restaurant {
+    display: none;
+}
+.restaurant.match {
+    display: block;
+}
+
+</style>
+
+<script>
+
+let restaurants = [...document.querySelectorAll(".restaurant")]
+let restIndex = restaurants.map(r => {
+    return {
+        id: r.id,
+        el: document.getElementById(r.id),
+        text: r.textContent.replace(/\s\s+/g, ' ')
+    }
+})
+
+
+let searchEl = document.getElementById("text-search")
+
+searchEl.addEventListener('change', filterElements)
+searchEl.addEventListener('keyup', filterElements)
+
+function filterElements() {
+    // go grab value from search
+    let term = searchEl.value
+
+    // loop through each item and mark as matched or not
+    restIndex.forEach(rest => {
+        let isMatch = rest.text.toLowerCase().includes(term.toLowerCase())
+        rest.el.classList.toggle("match", isMatch)
+    })
+
+}
+
+
+
+
+
+</script>

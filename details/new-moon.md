@@ -1,5 +1,5 @@
 ---
-name: Revolution Kitchen
+name: New Moon
 category: casual
 
 breakfast: false
