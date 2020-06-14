@@ -6,9 +6,16 @@
 
     <title>{{name}} | VT VEG</title>
 
+
+    <!-- capture the CSS content as a Nunjucks variable -->
+    {% set css %}
+        {% include "styles/styles.css" %}
+    {% endset %}
+    <!-- feed it through our cssmin filter to minify -->
     <style>
-        {% include "_includes/styles/styles.css" %}
+        {{ css | cssmin | safe }}
     </style>
+
 </head>
 <body>
     <div class="content">

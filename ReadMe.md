@@ -20,6 +20,7 @@ data.filter(rest => {
 })
 ```
 
-## Nunjucks If statement
+## References
 
 [Nunjucks Docs - If](https://mozilla.github.io/nunjucks/templating.html#if)
+[11ty - Inline Minified CSS](https://www.11ty.dev/docs/quicktips/inline-css/)
