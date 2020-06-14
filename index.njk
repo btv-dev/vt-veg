@@ -13,15 +13,16 @@ bodyClass: search
     {% include "_includes/icons/search.svg" %}
 </form>
 
-<ul class="categories">
+<ul class="categories unstyled">
     {%- for cat in collections.categories -%}
 
 
         <li class="category">
 
-            {{cat.name}}
+            <strong>{{cat.name}}</strong>
+            
 
-            <ul class="restaurants">
+            <ul class="restaurants unstyled">
 
                 {%- for rest in cat.restaurants -%}
 
@@ -30,7 +31,9 @@ bodyClass: search
                             {{rest.data.name}}
                         </a>
                         - 
-                        {{rest.data.summary}}
+                        <span class="text-muted">
+                            {{rest.data.summary}}
+                        </span>
                     </li>
 
                 {%- endfor -%}

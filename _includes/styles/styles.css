@@ -1,9 +1,12 @@
+html * {
+    box-sizing: border-box;
+}
+
 html,
 body,
 .content {
     min-height: 100vh;
     margin: 0;
-    font-family: 'Lato', sans-serif;
 }
 
 
@@ -15,8 +18,6 @@ body,
 }
 
 .header nav ul {
-    list-style: none;
-    padding-left: 0;
     display: flex;
 }
 
@@ -25,12 +26,55 @@ body,
     margin: 5px;
 }
 
+main.main {
+    padding: 0 15px;
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+section.hero {
+    margin-bottom: 30px;
+}
+
+
+/* typography */
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: rgb(22, 22, 22);
+}
+
+.text-muted {
+    color: rgb(54, 54, 54);
+}
+
+
+/* utility */
+
+ul.unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* main page */
+
+li.category {
+    margin-bottom: 15px;
+}
+
+ul.restaurants {
+    margin-top: 5px;
+}
+
+.restaurant {
+    margin-bottom: 5px;
+}
+
 
 /* detail page links */
 
 ul.rest-links {
-    list-style: none;
-    padding: 0;
     display: flex;
 }
 
@@ -66,19 +110,17 @@ body.search .form-search svg {
 form.form-search {
     display: flex;
     align-items: center;
+    margin-bottom: 25px;
 }
 
 .form-search input {
     border-radius: 5px;
-    height: 22px;
-    width: 80%;
+    height: 31px;
+    width: 100%;
 }
 
 
 /* search result */
-
-
-/* default to hidden */
 
 .restaurant {
     display: none;
