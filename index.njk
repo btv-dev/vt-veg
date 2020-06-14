@@ -19,7 +19,9 @@ bodyClass: search
 
         <li class="category">
 
-            <strong>{{cat.name}}</strong>
+            <strong>
+                {{cat.name | toTitleCase }}
+            </strong>
             
 
             <ul class="restaurants unstyled">

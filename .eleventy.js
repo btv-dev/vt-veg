@@ -31,7 +31,17 @@ module.exports = function(eleventyConfig) {
 
 
 
-    // add fitlers
+    // add filters
+    eleventyConfig.addFilter("toTitleCase", function(str) {
+        return str.replace(/\w\S*/g,
+            function(txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            }
+        );
+
+    });
+
+
     const CleanCSS = require("clean-css");
     eleventyConfig.addFilter("cssmin", function(code) {
         // return original text if run in dev
