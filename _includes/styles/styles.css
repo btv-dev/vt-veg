@@ -129,3 +129,11 @@ form.form-search {
 .restaurant.match {
     display: block;
 }
+
+li.category {
+    display: none;
+}
+
+li.category.match {
+    display: block;
+}

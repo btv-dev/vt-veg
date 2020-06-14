@@ -1,9 +1,10 @@
 let restaurants = [...document.querySelectorAll(".restaurant")]
-let restIndex = restaurants.map(r => {
+let categories = [...document.querySelectorAll(".category")]
+
+let restIndex = restaurants.map(el => {
     return {
-        id: r.id,
-        el: document.getElementById(r.id),
-        text: r.textContent.replace(/\s\s+/g, ' ')
+        el: el,
+        text: el.textContent.replace(/\s\s+/g, ' ').toLowerCase()
     }
 })
 
@@ -19,8 +20,16 @@ function filterElements() {
 
     // loop through each item and mark as matched or not
     restIndex.forEach(rest => {
-        let isMatch = rest.text.toLowerCase().includes(term.toLowerCase())
+        let isMatch = rest.text.includes(term.toLowerCase())
         rest.el.classList.toggle("match", isMatch)
     })
+
+    // set match for categories
+    categories.forEach(cat => {
+        // find if any restaurant in category have class match
+        let match = cat.querySelector(".restaurant.match")
+        cat.classList.toggle("match", match)
+    })
+
 
 }
