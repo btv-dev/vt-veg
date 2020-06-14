@@ -1,0 +1,16 @@
+---
+name: VT Veg
+layout: default.njk
+---
+
+<h2>All Restaurants</h2>
+
+<ul>
+    {%- for rest in collections.restaurants -%}
+
+
+        <li><a href="{{rest.url}}">{{rest.data.name}}</a></li>
+
+        
+    {%- endfor -%}
+</ul>
