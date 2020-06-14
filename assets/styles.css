@@ -1,0 +1,22 @@
+html,
+body,
+.content {
+    min-height: 100vh;
+    margin: 0;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header nav ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+}
+
+.header nav ul li {
+    padding: 5px;
+    margin: 5px;
+}
