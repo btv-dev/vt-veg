@@ -1,8 +1,37 @@
 module.exports = function(eleventyConfig) {
 
+    // add assets
     eleventyConfig.addPassthroughCopy("assets");
 
 
+    // add collections
+    eleventyConfig.addCollection("categories", function(collectionApi) {
+        // get all restaurants
+        let restaurants = collectionApi.getFilteredByTag("restaurants");
+
+        // ["fine dining", "fine dining", "casual"]
+        let categoryNames = restaurants.map(r => r.data.category)
+
+        // ["fine dining", "casual"]
+        let categories = Array.from(new Set(categoryNames))
+
+        let output = categories.map(cat => {
+            let matches = restaurants.filter(r => r.data.category === cat)
+
+            let obj = {
+                name: cat,
+                restaurants: matches
+            }
+
+            return obj
+        })
+
+        return output
+    });
+
+
+
+    // add fitlers
     const CleanCSS = require("clean-css");
     eleventyConfig.addFilter("cssmin", function(code) {
         return new CleanCSS({}).minify(code).styles;

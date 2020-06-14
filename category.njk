@@ -1,0 +1,36 @@
+---
+name: VT Veg
+layout: default.njk
+---
+
+<h2>Restaurants By Category</h2>
+
+<ul>
+    {%- for cat in collections.categories -%}
+
+
+        <li>
+
+            {{cat.name}}
+
+            <ul>
+
+                {%- for cat in cat.restaurants -%}
+
+                    <li>
+                        <a href="{{rest.url}}">
+                            {{cat.data.name}}
+                        </a>
+                        - 
+                        {{cat.data.summary}}
+                    </li>
+
+                {%- endfor -%}
+
+            </ul>
+            
+        </li>
+
+        
+    {%- endfor -%}
+</ul>
