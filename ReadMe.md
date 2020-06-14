@@ -21,7 +21,6 @@ npm i @11ty/eleventy
 
 ## Todo//
 
-* Dev vs. Prod - Minify vs Not
 * Combine Search
 * create category pages
   * /categories/fine-dining/

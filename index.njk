@@ -1,22 +1,42 @@
 ---
 name: VT Veg
 layout: default.njk
+bodyClass: search
 ---
 
-<h2>All Restaurants</h2>
+<section class="hero">
+    Find the best vegetarian and vegan restaurants in Vermont
+</section>
 
-<ul>
-    {%- for rest in collections.restaurants -%}
+<form class="form-search" action="">
+    <input type="text" id="text-search">
+    {% include "_includes/icons/search.svg" %}
+</form>
+
+<ul class="categories">
+    {%- for cat in collections.categories -%}
 
 
-        <li>
-            <a href="{{rest.url}}">
-                {{rest.data.name}}
-            </a>
-            - 
-            {{rest.data.summary}}
+        <li class="category">
+
+            {{cat.name}}
+
+            <ul class="restaurants">
+
+                {%- for rest in cat.restaurants -%}
+
+                    <li id="{{rest.url}}" class="restaurant match">
+                        <a href="{{rest.url}}">
+                            {{rest.data.name}}
+                        </a>
+                        - 
+                        {{rest.data.summary}}
+                    </li>
+
+                {%- endfor -%}
+
+            </ul>
         </li>
-
         
     {%- endfor -%}
 </ul>

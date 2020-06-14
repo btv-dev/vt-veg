@@ -17,17 +17,14 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-    
 </head>
-<body class="no-js" >
+<body class="no-js {{bodyClass}}" >
     <div class="content">
         
         <header class="header">
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/category">Category</a></li>
-                    <li><a href="/search">Search</a></li>
                 </ul>
             </nav>
         </header>
@@ -51,7 +48,13 @@
 
     <!-- capture the JS content as a Nunjucks variable -->
     {% set js %}
+        
         {% include "scripts/site.js" %}
+        
+        {% if bodyClass and 'search' in bodyClass %}
+            {% include "scripts/search.js" %}
+        {% endif %}
+
     {% endset %}
     <!-- feed it through our jsmin filter to minify -->
     <script>
