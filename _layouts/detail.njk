@@ -11,19 +11,27 @@ layout: default.njk
 <ul class="rest-links">
 
     {% if site %}
-        <li><a href="{{site}}">{{site}}</a></li>
+        <li><a href="{{site}}">
+            {% include "_includes/icons/globe.svg" %}
+        </a></li>
     {% endif %}
 
     {% if facebook %}
-        <li><a href="{{facebook}}">{{facebook}}</a></li>
+        <li><a href="{{facebook}}">
+            {% include "_includes/icons/facebook.svg" %}
+        </a></li>
     {% endif %}
 
     {% if twitter %}
-        <li><a href="{{twitter}}">{{twitter}}</a></li>
+        <li><a href="{{twitter}}">
+            {% include "_includes/icons/twitter.svg" %}
+        </a></li>
     {% endif %}
 
     {% if instagram %}
-        <li><a href="{{instagram}}">{{instagram}}</a></li>
+        <li><a href="{{instagram}}">
+            {% include "_includes/icons/instagram.svg" %}
+        </a></li>
     {% endif %}
 
 </ul>

@@ -5,6 +5,9 @@ body,
     margin: 0;
 }
 
+
+/* site layout */
+
 .content {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -19,4 +22,34 @@ body,
 .header nav ul li {
     padding: 5px;
     margin: 5px;
+}
+
+
+/* detail page links */
+
+ul.rest-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+ul.rest-links li:first-child {
+    margin-left: 0;
+}
+
+ul.rest-links li {
+    margin: 2px 5px;
+}
+
+ul.rest-links li a {
+    color: #373767;
+}
+
+ul.rest-links li a:hover,
+ul.rest-links li a:focus {
+    color: #46469b;
+}
+
+ul.rest-links a svg {
+    height: 25px;
 }
