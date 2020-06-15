@@ -175,6 +175,7 @@ ul.restaurants {
 }
 
 a.restaurant-name {
+    font-weight: bold;
     color: #0e710e;
     transition: color .4s ease;
 }
@@ -254,6 +255,13 @@ li.category {
 
 li.category.match {
     display: block;
+}
+
+
+/* no-js */
+
+.no-js .form-search {
+    display: none;
 }
 
 
