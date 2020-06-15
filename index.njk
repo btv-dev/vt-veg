@@ -1,5 +1,4 @@
 ---
-name: VT Veg
 layout: default.njk
 bodyClass: search
 ---
@@ -19,9 +18,9 @@ bodyClass: search
 
         <li class="category match">
 
-            <strong>
+            <h3 class="category-name">
                 {{cat.name | toTitleCase }}
-            </strong>
+            </h3>
             
 
             <ul class="restaurants unstyled">
@@ -29,7 +28,7 @@ bodyClass: search
                 {%- for rest in cat.restaurants -%}
 
                     <li id="{{rest.url}}" class="restaurant match">
-                        <a href="{{rest.url}}">
+                        <a href="{{rest.url}}" class="restaurant-name">
                             {{rest.data.name}}
                         </a>
                         - 

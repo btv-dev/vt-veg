@@ -15,6 +15,20 @@ body,
 .content {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "head head head" ". main ." "foot foot foot";
+}
+
+header.header {
+    grid-area: head;
+}
+
+main.main {
+    grid-area: main;
+}
+
+footer.footer {
+    grid-area: foot;
 }
 
 .header nav ul {
@@ -29,16 +43,21 @@ body,
 header.header,
 main.main {
     padding: 0 15px;
-    max-width: 45rem;
-    margin: 0 auto;
 }
 
 section.hero {
-    margin-bottom: 30px;
+    margin: 25px 0;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1em;
 }
 
 
 /* header */
+
+header.header {
+    text-align: center;
+}
 
 .page-title {
     text-decoration: none;
@@ -91,15 +110,14 @@ span.veg-text {
 
 footer.footer {
     text-align: center;
+    padding: 10px;
+    background: #ffffff4d;
 }
 
 .footer svg {
-    height: 13px;
-}
-
-.footer svg:hover,
-.footer svg:focus {
-    color: #c51616;
+    height: 14px;
+    margin-bottom: -2px;
+    color: #0e710e;
 }
 
 
@@ -119,11 +137,13 @@ svg {
 
 body {
     font-family: 'Lato', sans-serif;
-    color: rgb(22, 22, 22);
+    color: #1b2019;
+    font-size: 18px;
+    line-height: 1.3em;
 }
 
 .text-muted {
-    color: rgb(54, 54, 54);
+    color: #2a3426;
 }
 
 
@@ -154,6 +174,16 @@ ul.restaurants {
     margin-bottom: 5px;
 }
 
+a.restaurant-name {
+    color: #0e710e;
+    transition: color .4s ease;
+}
+
+a.restaurant-name:hover,
+a.restaurant-name:focus {
+    color: #309430;
+}
+
 
 /* detail page links */
 
@@ -170,16 +200,17 @@ ul.rest-links li {
 }
 
 ul.rest-links li a {
-    color: #373767;
+    color: #0e710e;
+    transition: color .4s ease
 }
 
 ul.rest-links li a:hover,
 ul.rest-links li a:focus {
-    color: #46469b;
+    color: #2a972a;
 }
 
-ul.rest-links a svg {
-    height: 25px;
+ul.rest-links svg {
+    height: 35px;
 }
 
 
@@ -223,4 +254,19 @@ li.category {
 
 li.category.match {
     display: block;
+}
+
+
+/* media queries */
+
+@media (max-width: 400px) {
+    .hide-sm {
+        display: none;
+    }
+}
+
+@media (min-width: 660px) {
+    .content {
+        grid-template-columns: 1fr 660px 1fr;
+    }
 }

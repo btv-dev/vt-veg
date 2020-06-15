@@ -2,6 +2,8 @@
 name: New Moon
 category: casual
 
+vegan: true
+
 breakfast: false
 lunch: true
 dinner: true
@@ -11,7 +13,7 @@ facebook: https://www.facebook.com/newmoonvt/
 twitter: 
 instagram: https://www.instagram.com/newmoonvt/
 
-summary: New Moon Cafe exists to offer fresh food, delicious coffee and a welcoming ambiance right in the heart of Burlington, Vermont.   
+summary: fresh food, delicious coffee and a welcoming ambiance   
 ---
 
 New Moon Cafe exists to offer fresh food, delicious coffee and a welcoming ambiance right in the heart of Burlington, Vermont.   

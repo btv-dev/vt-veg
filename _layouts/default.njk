@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{name}} | VT VEG</title>
+    <title>
+        {% if name %}
+            {{name}} | 
+        {% endif %}
+        VT Veg
+    </title>
 
 
     <!-- capture the CSS content as a Nunjucks variable -->
@@ -31,7 +36,9 @@
                     </span>
                     <span class="veg d-flex-inline-center">
                         {% include "_includes/icons/leaf.svg" %}
-                        <span class="veg-text">Vegetarian</span>
+                        <span class="veg-text">
+                            Veg<span class="hide-sm">atarian</span>
+                        </span>
                     </span>
                 </h1>
 
@@ -39,7 +46,10 @@
         </header>
 
         <main class="main">
-            <h1>{{name}}</h1>
+            {% if name %}
+                <h2>{{name}}</h1>
+            {% endif %}
+            
 
             {# All Content Injected Here #}
             {{content | safe}}
