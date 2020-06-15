@@ -36,12 +36,13 @@
     <!-- capture the CSS content as a Nunjucks variable -->
     {% set css %}
         {% include "styles/styles.css" %}
+        {% include "styles/fonts.css" %}
     {% endset %}
     <!-- feed it through our cssmin filter to minify -->
     <style>
         {{ css | cssmin | safe }}
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
 
 </head>
 <body class="no-js {{bodyClass}}" >
