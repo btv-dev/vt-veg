@@ -45,6 +45,12 @@
 
 </head>
 <body class="no-js {{bodyClass}}" >
+
+ <!-- capture the JS content as a Nunjucks variable -->
+    {% set js %}{% include "scripts/init.js" %}{% endset %}
+    <!-- feed it through our jsmin filter to minify -->
+    <script>{{ js | jsmin | safe }}</script>
+
     <div class="content">
         
         <header class="header">
@@ -88,8 +94,6 @@
 
     <!-- capture the JS content as a Nunjucks variable -->
     {% set js %}
-        
-        {% include "scripts/site.js" %}
         
         {% if bodyClass and 'search' in bodyClass %}
             {% include "scripts/search.js" %}

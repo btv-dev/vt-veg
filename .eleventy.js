@@ -1,3 +1,5 @@
+const fs = require("fs")
+
 module.exports = function(eleventyConfig) {
 
     // add assets
@@ -40,6 +42,16 @@ module.exports = function(eleventyConfig) {
             }
         );
 
+    });
+
+    eleventyConfig.addFilter("base64", function(path) {
+        try {
+            let image = fs.readFileSync(path);
+            let encode = new Buffer(image).toString('base64');
+            return `data:image/png;base64,${encode}`
+        } catch (error) {
+            return path
+        }
     });
 
 
