@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
 
     // add assets
+    eleventyConfig.addPassthroughCopy({ "assets/favicon.ico": "/favicon.ico" });
     eleventyConfig.addPassthroughCopy("assets");
 
 

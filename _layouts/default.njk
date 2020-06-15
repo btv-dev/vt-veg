@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        {% if name %}
-            {{name}} | 
-        {% endif %}
-        VT Veg
-    </title>
+    {% set page_title %}{% if name %} {{name}} |  {% endif %} VT Veg{% endset %}
+    {% set base_url = "https://vtveg.com/" %}
+    {% set summary = "Find the best vegetarian and vegan restaurants in Vermont" %}
 
+    {# Favicons #}
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    {# Theme color for browser chrome (chrome android) #}
+    <meta name="theme-color" content="#0e710e">
+
+    {# standard meta tags #}
+    <title>{{page_title}}</title>
+    <meta name="title" content="{{page_title}}">
+    <meta name="description" content="{{summary}}">
+    <link rel="canonical" href="{{base_url}}{{page.url}}">
+
+    {# Open Graph / Facebook #}
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{base_url}}{{page.url}}">
+    <meta property="og:title" content="{{page_title}}">
+    <meta property="og:description" content="{{summary}}">
+    <meta property="og:image" content="/assets/images/thumbnail.png">
+
+    {# Twitter #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{page_title}}">
+    <meta name="twitter:description" content="{{summary}}">
+    <meta name="twitter:image" content="/assets/images/thumbnail.png">
 
     <!-- capture the CSS content as a Nunjucks variable -->
     {% set css %}
