@@ -1,4 +1,6 @@
 const fs = require("fs")
+const CleanCSS = require("clean-css");
+const { minify } = require("terser")
 
 module.exports = function(eleventyConfig) {
 
@@ -55,7 +57,7 @@ module.exports = function(eleventyConfig) {
     });
 
 
-    const CleanCSS = require("clean-css");
+    
     eleventyConfig.addFilter("cssmin", function(code) {
         // return original text if run in dev
         if (process.env.ELEVENTY_ENV.toLowerCase() == "dev") return code
@@ -63,20 +65,23 @@ module.exports = function(eleventyConfig) {
         return new CleanCSS({}).minify(code).styles;
     });
 
-    const Terser = require("terser");
-    eleventyConfig.addFilter("jsmin", function(code) {
-        // return original text if run in dev
-        if (process.env.ELEVENTY_ENV.toLowerCase() == "dev") return code
 
-        let minified = Terser.minify(code);
-        if (minified.error) {
-            console.log("Terser error: ", minified.error);
-            return code;
+    eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+        // return original text if run in dev
+        if (process.env.ELEVENTY_ENV.toLowerCase() == "dev") {
+            callback(null, code)
         }
 
-        return minified.code;
-    });
-
+        try {
+          const minified = await minify(code)
+          callback(null, minified.code)
+        } catch (err) {
+          console.error("Terser error: ", err)
+          // Fail gracefully.
+          callback(null, code)
+        }
+      }
+    )
 
 
     return {
